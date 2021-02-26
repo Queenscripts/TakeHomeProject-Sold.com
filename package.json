@@ -11,13 +11,14 @@
     "start": "docker-compose build && docker-compose up",
     "start:dev": "CONFIG_ENV=dev next start",
     "start:prod": "CONFIG_ENV=prod next start",
-    "test": "CONFIG_ENV=test jest -c config/jest/jest.config.js --coverage --verbose"
+    "test": "CONFIG_ENV=test jest -c config/jest/jest.config.js --coverage --verbose",
+    "proxy": "http://localhost:4000"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brothatru/NextJS-Docker-Base-Template.git"
   },
-  "author": "michael trieu",
+  "author": "michael trieu - refactored by Queen Shabazz",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/brothatru/NextJS-Docker-Base-Template/issues"
@@ -31,7 +32,10 @@
     "@material-ui/icons": "^4.9.1",
     "@types/node": "^13.13.6",
     "@types/react": "^16.9.35",
+    "docker": "^1.0.0",
+    "docker-compose": "^0.23.6",
     "dot-prop-immutable": "^2.1.0",
+    "helmet": "^4.4.1",
     "lodash.merge": "^4.6.2",
     "next": "^10.0.0",
     "next-iron-session": "^4.1.11",

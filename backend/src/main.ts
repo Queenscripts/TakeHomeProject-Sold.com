@@ -21,6 +21,11 @@ async function bootstrap() {
   });
   SwaggerModule.setup('api/users', app, usersDocument);
 
+  //Added for testing route in development
+  //May also use helmet: https://docs.nestjs.com/security/helmet
+  //Nest.js security:https://docs.nestjs.com/security/cors
+  app.enableCors();
+
   await app.listen(3000);
 }
 bootstrap();
