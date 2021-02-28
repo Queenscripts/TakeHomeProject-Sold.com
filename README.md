@@ -1,8 +1,8 @@
-# Sold.com Take Home Project
+# Queen Entry | Sold.com Take Home Project
 
 This project includes several common tools and frameworks for developing a modern-day full-stack node/react web application.
 
-The goal of this project is to gauge your fullstack capabilities and knowledge in the following areas:
+This project entry assesses my fullstack capabilities and knowledge in the following areas:
 
 - React
 - Typescript
@@ -13,7 +13,7 @@ The goal of this project is to gauge your fullstack capabilities and knowledge i
 
 ## Summary
 
-This take home project includes frameworks that utilize the best practices for modern-day SPA (Single Page Applications) enforcing techniques such as _**code splitting, SSR (server-side rendering), material design, modular styles, state management, typing with typescript, prettier linting, unit testing, and more**_.
+Utilizing frameworks that utilize the best practices for modern-day SPA (Single Page Applications) enforcing techniques such as _**code splitting, SSR (server-side rendering), material design, modular styles, state management, typing with typescript, prettier linting, unit testing, and more**_.
 
 As a React developer, you should be able to dive in and start writing components!
 _(don't worry about setting up config =])_
@@ -84,98 +84,46 @@ Our NestJS application will be running at [http://localhost:9001/api/users/](htt
 
 Our MongoDB can be accessed at localhost:27018
 
-#### Whats set up so far
+#### What I Have Changed
 
-##### Database
+##### Backend
 
-So far I've seeded a test user with the following credentials:
+A major milestone in working concurrently to connect the API to the front-end, I had to navigate around CORS blocking issues. This led me to add to the ./backend/src/main.ts file:
 
 ```ts
-  {
-    firstName: 'Test',
-    lastName: 'User',
-    email: 'test@sold.com',
-    password: 'test1234',
-    phoneNumber: '+16195555555',
-  }
+app.enableCors();
 ```
 
 ##### Backend
 
-For our backend api, I've set up basic CRUD rest api endpoints that handle the following:
-
-- Create a new user
-- Fetch all users
-- Fetch user by id
-- Update a user by id
-- Delete a user by id
-- Search users
-
-(Swagger documentation is included at [http://localhost:9001/api/users/](http://localhost:9001/api/users/))
+Utilized regex to perform a more dynamic search query on the MongoDB database, using Mongoose as the ODM at ./backend/src/models/users/users.service.ts
 
 ##### Frontend
 
-In our frontend application, I've set up the following pages:
+I've added a form that performs a fetch request using the POST method to the http://localhost:9001/users API route:
 
-- [http://localhost:4000/login](http://localhost:4000/login) page
-  - Should render simple email/password login
-- [http://localhost:4000/dashboard](http://localhost:4000/dashboard) page (only accessible after logging in)
-  - Should render a table with random static data
-- [http://localhost:4000/sign-up](http://localhost:4000/sign-up) page
-  - **This is what you will be building =)... So exciting!!!**
+- Visit [http://localhost:4000/sign-up](http://localhost:4000/sign-up) to view
+- Requests user's first name, last name, email, password and phone number.
 
 ##### Automation Testing
 
-For our automation testing, I've installed and configured [Cypress](https://www.cypress.io/).
+Using [Cypress](https://www.cypress.io/).
 
-I've included a simple login spec that contains 2 tests:
+The signup spec that contains 5 tests:
 
-- Checks that invalid credentials will render error
-- Valid credentials should redirect to dashboard page
-
-## Your Task(s)
-
-Before we begin, let me pause here so you can take a breath before your brain explodes.
-
-- 1...
-- 2...
-- 3...
-
-Okay ready? Here we go!
-
-There are 3 core areas we are testing:
-
-- Frontend React Skills
-- Backend Rest API Skills
-- Automation Testing Skills
-
-It's okay if you are not well-versed in all 3 areas yet, just focus on what you're best at.
-
-I'm fully aware that most candidates that I've reached out to, if any, will have experience with all of these tools and frameworks, so I'm not expecting anyone to be perfect.
-
-With that said, there is plenty of documentation that can be found online, and these frameworks are quite popular and at the forefront of modern javascript development, so you will inevitably encounter these sooner or later.
-
-Also, this test is set up to be very practical and to demonstrate what a real project could look like on our team.
-
-Without further ado, here are the specs ~
-
-##### Requirements
-
-- Finish the sign up page (FE)
-  - You will want to create a react form that utilizes the [Users API](http://localhost:9001/api/users/#/) for creating a new user
-    - (Note: To access the api from the server side, you should use **nestjs:3000** as the base url)
-  - You are welcome to use material ui or build/style components from scratch if you want
-  - Form validation is essential
-- Update search users endpoint (BE)
-  - Currently the search endpoint does a strict search
-  - We want to be able to have a more flexible search (ie. case insensitive, partial emails, names, etc...)
-- Automation test for registering a new user
+- Checks that invalid email will render error that user must submit correct email format
+- Checks that invalid phone number format will render error that user must submit correct phone format
+- Checks that empty last name field will render error that user must include a last name
+- Checks that empty first name field will render error that user must include a first name
+- Checks that empty password field will render error that user must include a password
 
 #### Note\*
 
-For this project, Cypress isn't configured to run on docker, so you will need to install it on your local host machine's node_modules.
+### Thank you for this opportunity!
 
-If you haven't already, cd into your project folder and run
+#### I enjoyed approaching solving the problems in this project. I look forward to connecting, and you can find me at [Queenscript Twitter](http://twitter.com/_queenscript)
+
+Installation Notes:
 
 ```bash
 npm install

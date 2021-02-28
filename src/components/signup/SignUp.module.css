@@ -4,12 +4,9 @@
 
 .container {
   font-size: large;
+  padding: 0 20%;
 }
 
 .form {
   display: grid;
-}
-
-div.MuiFormControl-root {
-  padding: 10px 0 !important;
 }

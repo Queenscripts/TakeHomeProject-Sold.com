@@ -3,6 +3,7 @@ import { AccountCircle, Fingerprint, Lock, MailOutline, Phone } from '@material-
 import { useRouter } from 'next/router';
 import { default as React } from 'react';
 import styles from './SignUp.module.css';
+import Link from 'next/link';
 
 export const SignUp = () => {
   const router = useRouter();
@@ -136,15 +137,18 @@ export const SignUp = () => {
             </FormHelperText>
           </FormControl>
         </form>
-        <Button onClick={handleSignUp} variant='contained'>
+        <Button type='submit' onClick={handleSignUp} variant='contained'>
           Sign Up
         </Button>
-        {/* Consider adding the login button */}
-        {/* <Button type='submit' variant='contained' color='primary'>
-              Login
-            </Button>
-          </div> */}
+        <div>
+          <br />
+          <Link href='/login'>
+            <a> Take me to login, I already have an account</a>
+          </Link>
+        </div>
+
         {/* Handle errors + state to popup in DOM */}
+
         <div style={{ color: 'red' }}>{error}</div>
       </div>
     </div>
