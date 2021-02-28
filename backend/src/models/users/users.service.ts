@@ -56,7 +56,7 @@ export class UsersService {
     // const res = await this.userModel.find(searchUserDto).exec();
     // Alternative approach: Use mongodb's built-in indexing for case insensitive search
     //Belows approach uses $regex to assure performance proficiency during the database search
-    // The $or key is necessary for flexible search of multiple key-value pairs
+    // The $or key is necessary for flexible search of an array with multiple objects
     return this.userModel.find({
       $or: [
         { firstName: { $regex: `${searchUserDto.firstName}`, $options: 'i' } },

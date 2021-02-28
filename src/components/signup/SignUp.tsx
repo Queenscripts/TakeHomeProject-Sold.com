@@ -66,7 +66,9 @@ export const SignUp = () => {
               placeholder={'Xan'}
               id='name-input'
               aria-describedby='my-helper-text'
+              data-cy='signup-input-fname'
             />
+
             <FormHelperText id='email-helper-text'>
               Please enter your full first name.
             </FormHelperText>
@@ -80,6 +82,7 @@ export const SignUp = () => {
               placeholder={'Michel'}
               id='last-input'
               aria-describedby='my-helper-text'
+              data-cy='signup-input-lname'
             />
             <FormHelperText id='last-helper-text'>
               Please enter your full last name.
@@ -95,6 +98,7 @@ export const SignUp = () => {
               placeholder={'xan@michel.com'}
               id='email-input'
               aria-describedby='my-helper-text'
+              data-cy='signup-input-email'
             />
             <FormHelperText id='email-helper-text'>
               We'll never share your email.
@@ -111,6 +115,7 @@ export const SignUp = () => {
               id='my-input'
               type='password'
               aria-describedby='my-helper-text'
+              data-cy='signup-input-password'
             />
             <FormHelperText id='my-helper-text'>Don't share your password.</FormHelperText>
           </FormControl>
@@ -124,6 +129,7 @@ export const SignUp = () => {
               placeholder={'+15555555'}
               id='phone-input'
               aria-describedby='my-helper-text'
+              data-cy='signup-input-phone'
             />
             <FormHelperText id='phone-helper-text'>
               Follow the phone number pattern.
