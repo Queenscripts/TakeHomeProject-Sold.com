@@ -52,8 +52,23 @@ export class UsersService {
     return await this.findById(id);
   }
 
-  async search(searchUserDto: SearchUserDto): Promise<User[]> {
-    const res = await this.userModel.find(searchUserDto).exec();
-    return res.map((r) => r.toJSON());
+  async search(searchUserDto: SearchUserDto): Promise<any> {
+    // const res = await this.userModel.find(searchUserDto).exec();
+    // Alternative approach: Use mongodb's built-in indexing for case insensitive search
+    //Belows approach uses $regex to assure performance proficiency during the database search
+    // The $or key is necessary for flexible search of multiple key-value pairs
+    return this.userModel.find({
+      $or: [
+        { firstName: { $regex: `${searchUserDto.firstName}`, $options: 'i' } },
+        { lastName: { $regex: `${searchUserDto.lastName}`, $options: 'i' } },
+        { phoneNumber: { $regex: `${searchUserDto.phoneNumber}`, $options: 'i' } },
+        { email: { $regex: `${searchUserDto.email}`, $options: 'i' } },
+      ],
+      function(err, docs) {
+        if (err) console.log(err);
+        console.log(docs);
+        return docs;
+      },
+    });
   }
 }
