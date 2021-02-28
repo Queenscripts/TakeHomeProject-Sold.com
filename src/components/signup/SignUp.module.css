@@ -1,0 +1,15 @@
+/* *{
+    box-sizing: border-box;
+} */
+
+.container {
+  font-size: large;
+}
+
+.form {
+  display: grid;
+}
+
+div.MuiFormControl-root {
+  padding: 10px 0 !important;
+}
