@@ -88,7 +88,7 @@ Our MongoDB can be accessed at localhost:27018
 
 ##### Backend
 
-A major milestone in working concurrently to connect the API to the front-end, I had to navigate around CORS blocking issues. This led me to add to the ./backend/src/main.ts file:
+A major milestone in working concurrently with the API and the front-end was in navigating around CORS blocking issues. This led me to add to the ./backend/src/main.ts file:
 
 ```ts
 app.enableCors();
