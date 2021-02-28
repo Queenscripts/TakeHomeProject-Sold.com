@@ -29,7 +29,6 @@ describe('Sign Up Spec', () => {
   it('Should render error with empty input for password field', () => {
     cy.visit('http://localhost:4000/sign-up');
     cy.get('[data-cy="signup-input-email"]').type('invalid_emailtest.com');
-    // cy.get('[data-cy="signup-input-password"]').type('invalid_password');
     cy.get('Button').click();
     cy.contains('email must be an email', { matchCase: false });
   });
